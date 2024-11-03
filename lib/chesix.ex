@@ -1,18 +1,18 @@
 defmodule Chesix do
   @moduledoc """
-  Documentation for `Chesix`.
+  This is the entry point for the CLI utility
+  USAGE with exixir Chesis.elx ARGS
   """
 
-  @doc """
-  Hello world.
+  def call do
+    System.argv()
+    |> Enum.map(&prints/1)
+  end
 
-  ## Examples
-
-      iex> Chesix.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def prints(arg) do
+    arg
+    |> IO.puts()
   end
 end
+
+Chesix.call()
